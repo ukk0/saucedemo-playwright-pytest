@@ -12,7 +12,7 @@ import pytest
     ]
 )
 def test_valid_and_invalid_login_credentials(login_page, pages, username: str, password: str):
-    login_page.navigate_to_page(pages["LOGIN_PAGE"])
+    login_page.navigate_to_page(url=pages["LOGIN_PAGE"])
     login_page.enter_credentials_and_try_login(
         username=username, password=password
     )
