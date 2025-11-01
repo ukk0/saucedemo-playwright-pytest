@@ -20,37 +20,28 @@ class CheckoutPage(BasePage):
         self.return_to_shop_button = page.get_by_test_id("back-to-products")
         self.cancel_checkout_button = page.get_by_test_id("cancel")
 
-    def fill_first_name(self, first_name: str):
-        self.input_first_name.fill(first_name)
-
-    def fill_last_name(self, last_name: str):
-        self.input_last_name.fill(last_name)
-
-    def fill_zip_code(self, zip_code: str):
-        self.input_zip_code.fill(zip_code)
-
-    def proceed_to_final_checkout(self):
+    def fill_required_info_and_proceed(
+            self, first_name: str = None, last_name: str = None, zip_code: str = None
+    ):
+        if first_name:
+            self.input_first_name.fill(first_name)
+        if last_name:
+            self.input_last_name.fill(last_name)
+        if zip_code:
+            self.input_zip_code.fill(zip_code)
         self.submit_info_button.click()
 
-    def fill_all_required_info_and_proceed(
-            self, first_name: str, last_name: str, zip_code: str
-    ):
-        self.fill_first_name(first_name)
-        self.fill_last_name(last_name)
-        self.fill_zip_code(zip_code)
-        self.proceed_to_final_checkout()
-
-    def missing_info_warning(self, expected_error: str):
+    def expect_missing_info_warning(self, expected_error: str):
         expect(self.error_missing_info).to_have_text(expected_error)
+
+    def cancel_checkout(self):
+        self.cancel_checkout_button.click()
 
     def finalize_payment(self):
         self.finish_payment_button.click()
 
     def return_to_shop(self):
         self.return_to_shop_button.click()
-
-    def cancel_checkout(self):
-        self.cancel_checkout_button.click()
 
     def validate_order_price_details(self):
         sum_of_item_prices = sum([
