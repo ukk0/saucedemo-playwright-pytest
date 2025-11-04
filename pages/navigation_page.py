@@ -1,4 +1,5 @@
-from playwright.sync_api import Page, Playwright, expect, Locator
+from playwright.sync_api import Locator, Page, Playwright, expect
+
 from pages.base_page import BasePage
 
 
