@@ -29,7 +29,10 @@ def pages():
         "CART_PAGE": "https://www.saucedemo.com/cart.html",
         "CHECKOUT_PAGE1": "https://www.saucedemo.com/checkout-step-one.html",
         "CHECKOUT_PAGE2": "https://www.saucedemo.com/checkout-step-two.html",
-        "CHECKOUT_PAGE3": "https://www.saucedemo.com/checkout-complete.html"
+        "CHECKOUT_PAGE3": "https://www.saucedemo.com/checkout-complete.html",
+        "SOC_X_PAGE": "https://x.com/saucelabs",
+        "SOC_FB_PAGE": "https://www.facebook.com/saucelabs",
+        "SOC_LI_PAGE": "https://www.linkedin.com/company/sauce-labs/"
     }
 
 
