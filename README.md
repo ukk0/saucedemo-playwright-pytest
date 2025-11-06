@@ -68,7 +68,19 @@ pytest -n auto
 (the 'auto' option will automatically distribute test execution across all available CPUs, you can also
 replace it with a specific number you would like to utilize, f.e. ```pytest -n 4```)
 
-Additional test configuration options (browser, headless mode, slow motion, etc.) will be added later.
+By default, tests are configured to run in headless mode using Chromium browser and without delay (as defined in ```pytest.ini```)  
+You can override these options from the command line:
+
+| Option            | Description                                         | Example                         |
+|------------------|-----------------------------------------------------|---------------------------------|
+| `--browser`       | Choose browser engine (`chromium`, `firefox`, `webkit`) | `pytest --browser=firefox`      |
+| `--headed`        | Run tests with browser UI (not headless)           | `pytest --headed`                |
+| `--slowmo <ms>`   | Add delay between actions in milliseconds          | `pytest --slowmo 200`            |
+
+Example: Override defaults and run login tests in headed Firefox, with a 300ms action delay:
+```bash
+pytest tests/test_login_page.py --browser=firefox --headed --slowmo 300
+```
 
 ---
 
