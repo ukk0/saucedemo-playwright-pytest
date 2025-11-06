@@ -8,7 +8,9 @@ class ShoppingCartPage(BasePage):
         super().__init__(page, playwright)
 
         self.remove_item_button = page.get_by_text(text="Remove")
-        self.cart_item_label = page.locator("[class='cart_list'] [class='cart_item_label']")
+        self.cart_item_label = page.locator(
+            "[class='cart_list'] [class='cart_item_label']"
+        )
         self.return_to_shop_page_button = page.get_by_test_id("continue-shopping")
         self.proceed_to_checkout_button = page.get_by_test_id("checkout")
 

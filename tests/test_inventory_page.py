@@ -7,12 +7,8 @@ def test_inventory_item_contents(inventory_page, pages):
 
 
 @pytest.mark.parametrize(
-    "filtering_option", [
-        "Price (high to low)",
-        "Price (low to high)",
-        "Name (A to Z)",
-        "Name (Z to A)"
-    ]
+    "filtering_option",
+    ["Price (high to low)", "Price (low to high)", "Name (A to Z)", "Name (Z to A)"],
 )
 def test_item_filtering_options(inventory_page, pages, filtering_option):
     inventory_page.navigate_to_page(url=pages["INVENTORY_PAGE"], title="Products")
@@ -35,11 +31,12 @@ def test_item_filtering_options(inventory_page, pages, filtering_option):
 
 
 @pytest.mark.parametrize(
-    "to_add, to_remove", [
+    "to_add, to_remove",
+    [
         (1, 1),
         (2, 1),
         (3, 1),
-    ]
+    ],
 )
 def test_adding_and_removing_cart_items(inventory_page, pages, to_add, to_remove):
     inventory_page.navigate_to_page(url=pages["INVENTORY_PAGE"], title="Products")

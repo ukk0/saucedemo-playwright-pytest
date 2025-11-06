@@ -12,7 +12,9 @@ class NavigationPage(BasePage):
         self.menu_all_items_button = page.get_by_role(role="link", name="All Items")
         self.menu_about_button = page.get_by_role(role="link", name="About")
         self.menu_logout_button = page.get_by_role(role="link", name="Logout")
-        self.menu_reset_app_button = page.get_by_role(role="link", name="Reset App State")
+        self.menu_reset_app_button = page.get_by_role(
+            role="link", name="Reset App State"
+        )
         self.close_menu_button = page.get_by_role(role="button", name="Close Menu")
         self.link_button_x = page.locator("[class='social_twitter']")
         self.link_button_fb = page.locator("[class='social_facebook']")
@@ -26,7 +28,9 @@ class NavigationPage(BasePage):
         self.close_menu_button.click()
         expect(self.menu_wrapper).not_to_be_visible()
 
-    def click_link_and_expect_new_tab_to_have_url(self, locator: Locator, expected_url: str):
+    def click_link_and_expect_new_tab_to_have_url(
+        self, locator: Locator, expected_url: str
+    ):
         with self.page.context.expect_page() as new_page:
             locator.click()
 

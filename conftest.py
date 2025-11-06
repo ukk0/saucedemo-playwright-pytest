@@ -32,7 +32,7 @@ def pages():
         "CHECKOUT_PAGE3": "https://www.saucedemo.com/checkout-complete.html",
         "SOC_X_PAGE": "https://x.com/saucelabs",
         "SOC_FB_PAGE": "https://www.facebook.com/saucelabs",
-        "SOC_LI_PAGE": "https://www.linkedin.com/company/sauce-labs/"
+        "SOC_LI_PAGE": "https://www.linkedin.com/company/sauce-labs/",
     }
 
 

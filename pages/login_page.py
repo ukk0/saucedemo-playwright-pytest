@@ -12,7 +12,9 @@ class LoginPage(BasePage):
         self.login_button = page.get_by_test_id("login-button")
         self.login_error_message = page.get_by_test_id("error")
 
-    def enter_credentials_and_try_login(self, username: str = None, password: str = None):
+    def enter_credentials_and_try_login(
+        self, username: str = None, password: str = None
+    ):
         if username:
             self.user_name_input.fill(username)
         if password:

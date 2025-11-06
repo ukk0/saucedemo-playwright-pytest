@@ -13,12 +13,13 @@ def test_cancel_checkout_process(checkout_page, pages):
 
 
 @pytest.mark.parametrize(
-    "fname, lname, zcode", [
+    "fname, lname, zcode",
+    [
         ("", "McTester", "123456"),
         ("Testy", "", "123456"),
         ("Testy", "McTester", ""),
         ("Testy", "McTester", "123456"),
-    ]
+    ],
 )
 def test_buyer_info_is_required_at_checkout(checkout_page, pages, fname, lname, zcode):
     checkout_page.navigate_to_page(
@@ -26,7 +27,8 @@ def test_buyer_info_is_required_at_checkout(checkout_page, pages, fname, lname, 
     )
 
     checkout_page.fill_required_info_and_proceed(
-        first_name=fname, last_name=lname, zip_code=zcode)
+        first_name=fname, last_name=lname, zip_code=zcode
+    )
 
     if not fname:
         checkout_page.expect_missing_info_warning(

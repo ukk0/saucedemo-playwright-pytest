@@ -14,11 +14,17 @@ class InventoryPage(BasePage):
         self.inventory_item_pict = page.locator("[class='inventory_item_img']")
 
         self.inventory_filter = page.get_by_test_id("product-sort-container")
-        self.inventory_item_names = page.locator("[class='inventory_list'] [class='inventory_item_name']")
-        self.inventory_item_prices = page.locator("[class='inventory_list'] [class='inventory_item_price']")
+        self.inventory_item_names = page.locator(
+            "[class='inventory_list'] [class='inventory_item_name']"
+        )
+        self.inventory_item_prices = page.locator(
+            "[class='inventory_list'] [class='inventory_item_price']"
+        )
         self.add_item_to_cart = page.get_by_text(text="Add to cart")
         self.remove_item_from_cart = page.get_by_text(text="Remove")
-        self.shopping_cart_items = page.locator("[class='shopping_cart_link'] [class='shopping_cart_badge']")
+        self.shopping_cart_items = page.locator(
+            "[class='shopping_cart_link'] [class='shopping_cart_badge']"
+        )
         self.shopping_cart_badge = page.get_by_test_id("shopping-cart-link")
 
     def open_shopping_cart(self):
@@ -58,7 +64,5 @@ class InventoryPage(BasePage):
         assert items == sorted(items, reverse=reverse)
 
     def verify_items_are_ordered_by_price(self, reverse: bool):
-        items = [
-            float(x[1:]) for x in self.inventory_item_prices.all_inner_texts()
-        ]
+        items = [float(x[1:]) for x in self.inventory_item_prices.all_inner_texts()]
         assert items == sorted(items, reverse=reverse)

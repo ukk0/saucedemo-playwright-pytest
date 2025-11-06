@@ -2,20 +2,21 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    "username, password", [
+    "username, password",
+    [
         ("standard_user", "secret_sauce"),
         ("locked_out_user", "secret_sauce"),
         ("not_registered_user", "secret_sauce"),
         ("standard_user", "s3cr3ts4uc3"),
         ("standard_user", ""),
-        ("", "secret_sauce")
-    ]
+        ("", "secret_sauce"),
+    ],
 )
-def test_valid_and_invalid_login_credentials(login_page, pages, username: str, password: str):
+def test_valid_and_invalid_login_credentials(
+    login_page, pages, username: str, password: str
+):
     login_page.navigate_to_page(url=pages["LOGIN_PAGE"])
-    login_page.enter_credentials_and_try_login(
-        username=username, password=password
-    )
+    login_page.enter_credentials_and_try_login(username=username, password=password)
 
     if username == "locked_out_user":
         login_page.expect_login_error_with_text(
@@ -53,4 +54,4 @@ def test_login_required_to_access_app(login_page, pages):
 
     login_page.expect_login_error_with_text(
         text="Epic sadface: You can only access '/inventory.html' when you are logged in."
-)
+    )
