@@ -8,6 +8,9 @@ from pages.shopping_cart_page import ShoppingCartPage
 
 
 def login_cookie():
+    """
+    Allows to bypass the login page for non-login related tests.
+    """
     return {
         "name": "session-username",
         "value": "standard_user",
@@ -17,6 +20,9 @@ def login_cookie():
 
 
 def fill_cart_script():
+    """
+    Prefills shopping cart with items.
+    """
     return "localStorage.setItem('cart-contents', '[0, 1, 2, 3, 4, 5]')"
 
 
