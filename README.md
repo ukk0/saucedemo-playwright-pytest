@@ -1,8 +1,14 @@
 # SauceDemo E2E Tests with Playwright + pytest
 
-This project demonstrates **end-to-end UI testing** of the [SauceDemo](https://www.saucedemo.com/) web application using **Playwright + pytest**.  
-A [separate project of mine](https://github.com/ukk0/saucedemo-playwright-behave) utilizes instead **Playwright + Behave** to explore **BDD workflows** for the same web app. 
-Both serve as a comparison of different frameworks and approaches to test design.
+This project demonstrates **end-to-end UI testing** of the [SauceDemo](https://www.saucedemo.com/) website,
+validating key user workflows and page features using **Playwright + pytest**.  
+
+While individual features are tested separately, the suite collectively ensures full application coverage across login, 
+shopping, and checkout flows.  
+
+A [separate project of mine](https://github.com/ukk0/saucedemo-playwright-behave) 
+utilizes instead **Playwright + Behave** to explore **BDD workflows** for the same web app. Both serve as a comparison 
+of different frameworks and approaches to test design.
 
 ---
 
