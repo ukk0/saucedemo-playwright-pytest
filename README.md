@@ -24,7 +24,7 @@ It emphasizes:
 
 ## Project structure
 
-saucedemo-playwright-pytest/
+saucedemo-playwright-pytest/  
 ├── pages/              # Page Object Models (POMs)  
 ├── tests/              # Test files  
 ├── conftest.py         # Shared fixtures and test setup  
