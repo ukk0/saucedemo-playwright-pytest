@@ -25,9 +25,9 @@ It emphasizes:
 ## Project structure
 
 saucedemo-playwright-pytest/  
-├── pages/$~~~~~~~~~~~~~$ # Page Object Models (POMs)  
-├── tests/$~~~~~~~~~~~~~~~$ # Test files  
-├── conftest.py$~~~~~~~$ # Shared fixtures and test setup  
+├── pages/ # Page Object Models (POMs)  
+├── tests/ # Test files  
+├── conftest.py # Shared fixtures and test setup  
 ├── requirements.txt  
 ├── pytest.ini  
 └── .pre-commit-config.yaml  
